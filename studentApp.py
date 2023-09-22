@@ -18,7 +18,7 @@ db_conn = connections.Connection(
 
 )
 output = {}
-table = 'Student'
+table = 'student'
 
 
 @app.route("/", methods=['GET', 'POST'])
@@ -34,7 +34,7 @@ def AddStu():
     student_password = request.form['student_password']
 
 
-    insert_sql = "INSERT INTO Student VALUES (%s, %s)"
+    insert_sql = "INSERT INTO student VALUES (%s, %s)"
     cursor = db_conn.cursor()
 
 
@@ -51,12 +51,12 @@ def AddStu():
     return render_template('login.html')
 
 @app.route("/studentlogin", methods=['GET', 'POST'])
-def StudentLogin():
+def studentLogin():
     
     student_email = request.form['student_email']
     student_password = request.form['student_password']
         
-    select_sql = "SELECT * FROM Student WHERE student_email = %s AND student_password = %s"
+    select_sql = "SELECT * FROM student WHERE student_email = %s AND student_password = %s"
     cursor = db_conn.cursor()
 
     try:
