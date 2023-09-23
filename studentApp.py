@@ -34,7 +34,7 @@ def AddStu():
     student_password = request.form['student_password']
 
 
-    insert_sql = "INSERT INTO student VALUES (%s, %s)"
+    insert_sql = "INSERT INTO student (student_email, student_password) VALUES (%s, %s)"
     cursor = db_conn.cursor()
 
 
